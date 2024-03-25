@@ -74,24 +74,35 @@
         }
         return time < 10 ? `0${time}` : time;
       }
-
       function pause() {
+        const button = document.querySelector("button:nth-child(2)");
         if (timerInterval) {
           clearInterval(timerInterval);
           timerInterval = null;
           pausedTime = Date.now() - startTime;
-          document.querySelector("button:nth-child(1)").innerText = "Resume";
+          button.innerHTML =
+            '<img src="./assets/play.png" width="30px" alt="" /> Resume';
+        } else {
+          startTime = Date.now() - pausedTime;
+          timerInterval = setInterval(updateTimer, 10);
+          button.innerHTML =
+            '<img src="./assets/pause.png" width="30px" alt="" /> Pause';
         }
       }
 
       function reset() {
+        const startButton = document.querySelector("button:nth-child(1)");
+        const timerDisplay = document.getElementById("timer");
+        const lapTimes = document.getElementById("lap-times");
+
         clearInterval(timerInterval);
         timerInterval = null;
         pausedTime = 0;
         startTime = 0;
-        document.querySelector("button:nth-child(1)").innerText = "Start";
-        document.getElementById("timer").innerText = "00:00:00:000";
-        document.getElementById("lap-times").innerText = "";
+        startButton.innerHTML =
+          '<img src="./assets/play.png" width="30px" alt="" /> Start';
+        timerDisplay.innerText = "00:00:00:000";
+        lapTimes.innerText = "";
         laps = [];
       }
 
