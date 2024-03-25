@@ -4,31 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stopwatch</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-      }
-      #timer {
-        font-size: 2em;
-        margin: 20px;
-      }
-      #controls {
-        margin: 20px;
-      }
-      #lap-times {
-        margin-top: 20px;
-        text-align: left;
-      }
-    </style>
+    <link rel="stylesheet" href="Style.css" />
   </head>
   <body>
     <div id="timer">00:00:00:000</div>
     <div id="controls">
-      <button onclick="startStop()">Start</button>
-      <button onclick="pause()">Pause</button>
-      <button onclick="reset()">Reset</button>
-      <button onclick="lap()">Lap</button>
+      <button onclick="startStop()">
+        <img src="./assets/play.png" width="30px" alt="" />
+        Start
+      </button>
+      <button onclick="pause()">
+        <img src="./assets/pause.png" width="30px" alt="" />
+        Pause
+      </button>
+      <button onclick="reset()">
+        <img src="./assets/reset.png" width="30px" alt="" />
+        Reset
+      </button>
+      <button onclick="lap()">
+        <img src="./assets/arrow.png" width="30px" alt="" />
+        Lap
+      </button>
     </div>
     <div id="lap-times"></div>
 
