@@ -60,4 +60,8 @@ button:hover {
     height: 3em;
     font-size: 22px;
   }
+  #lap-times {
+    font-size: 20px;
+    line-height: 40px;
+  }
 }

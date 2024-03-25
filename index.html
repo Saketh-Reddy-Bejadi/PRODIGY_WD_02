@@ -35,14 +35,18 @@
       let laps = [];
 
       function startStop() {
+        const button = document.querySelector("button:nth-child(1)");
         if (!timerInterval) {
           startTime = Date.now() - pausedTime;
           timerInterval = setInterval(updateTimer, 10);
-          document.querySelector("button:nth-child(1)").innerText = "Stop";
+          button.innerHTML =
+            '<img src="./assets/stop-button.png" width="30px" alt="" /> Stop';
         } else {
           clearInterval(timerInterval);
           timerInterval = null;
-          document.querySelector("button:nth-child(1)").innerText = "Start";
+          button.innerHTML =
+            '<img src="./assets/play.png" width="30px" alt="" /> Start';
+          button.removeAttribute("disabled");
         }
       }
 
